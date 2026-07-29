@@ -1,4 +1,4 @@
- #!/bin/bash  
+#!/bin/bash  
 cd /app  
 echo "=== Files in /app ==="  
 ls -la  
