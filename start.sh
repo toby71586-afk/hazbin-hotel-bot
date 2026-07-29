@@ -1,9 +1,6 @@
 #!/bin/bash  
-# Force Railway to find and run the bot  
-cd /app || exit 1  
-echo "Current directory: $(pwd)"  
-echo "Files in this directory:"  
-ls -la
-
-# Run the bot  
-python charlie_welcome_bot.py
+echo "=== Railway filesystem check ==="  
+echo "PWD: $(pwd)"  
+echo "--- Listing /app recursively ---"  
+find /app -type f 2>/dev/null  
+echo "--- done ---"  
