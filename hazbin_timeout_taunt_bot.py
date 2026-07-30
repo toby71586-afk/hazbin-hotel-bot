@@ -52,7 +52,7 @@ TAUNTS = {
         "dms": [
             "Ooh, someone's in trou-ble! What'd you do, steal my look?",
             "Timeout? In THIS economy? Girl, I feel you.",
-            "Don't worry baby, I've been in way worse situations. Like, WAY worse.",
+            "Don't worry, baby, I've been in way worse situations. Like, WAY worse.",
             "Aww, look at you all grounded and stuff. Kinda cute.",
             "If you're gonna be in timeout, at least make it entertaining!"
         ],
@@ -67,7 +67,7 @@ TAUNTS = {
         "color": 0x8B0000,
         "dms": [
             "How DELIGHTFUL! A little bird in a cage! This is wonderful entertainment!",
-            "I do so enjoy watching sinners face consequences. It's almost musical!",
+            "I do so ejoy watching sinners face consequences. It's almost musical!",
             "Don't worry, my dear. The radio waves carry even the loneliest of voices!",
             "I could get you out of timeout... for a price. But where's the fun in that?",
             "Rules are such fascinating constructs, aren't they?!Especially when you break them!"
@@ -96,19 +96,19 @@ TAUNTS = {
         ]
     },
     "Vox": {
-        "color": 0x00BFFF,
+        "color": 0x00BFFF, 
         "dms": [
-            "Look at you! All mutted! How's that feel? I'd broadcast it if I were you.",
+            "Look at you! All mutted! How does that feel? I'd broadcast it if I were you.",
             "Alastor thinks he's funny. YOU're in timeout. Who's laughing now?",
             "I control the screens in Hell. You're not on any of them. How sad.",
             "You're trending for all the wrong reasons, pal.",
-            "If you were on my network, I'd give you your own show: 'Consequences with [Your Name]'!"
+            "If you were on my network, I'd give you your own show: 'Consequences with [Your Name]'"
         ],
         "mod_messages": [
             "Caught on camera! Again!",
             "This one's a repeat offender. I love the consistency!",
             "Can we get a live feed of their timeout? For ratings?",
-            "I$d put this on the news if anyone cared!"
+            "I'd put this on the news if anyone cared!"
         ]
     },
     "Valentino": {
@@ -121,7 +121,7 @@ TAUNTS = {
             "When you get out, we're signing a contract. No exceptions."
         ],
         "mod_messages": [
-            "They'd look good in my studio after this.",
+            "Theyd look good in my studio after this.",
             "I could use someone with their... attitude.",
             "Breaking rules is just a talent waiting to be exploited!",
             "I love watching them squirm."
@@ -147,7 +147,7 @@ TAUNTS = {
         "color": 0xFFD700,
         "dms": [
             "I literally fell from Heaven and I'm STILL more put together than you right now.",
-            "Timeout? I'invented consequences. You're welcome.",
+            "Timeout? I invented consequences. You're welcome.",
             "You know who else got in trouble? Me. For giving humanity knowledge. Perspective!",
             "Ducks don't get put in timeout. Just saying.",
             "I could end your timeout with a snap. But I won't. Character building!"
@@ -185,14 +185,14 @@ async def on_message(message):
     if message.author.id in timed_out_users:
         char_name = random.choice(CHARACTER_NAMES)
         char = TAUNTS[char_name]
-        dm_taunt = random.choice(char["dmss"])
+        dm_taunt = random.choice(char["dms"])
         try:
             embed_dm = discord.Embed(
-                title=f"\u1D4E2 {char_name} has a message for you!",
-                description=f"*\"{dm_taunt}\"*",
+                title=f"ϔ⍓ {char_name} has a message for you!",
+                description=f"*{\"}{}{ dm_taunt }\"}*",
                 color=char["color"]
             )
-            embed_dm.set_footer(text=f"\u1DACC {char_name} - Hazbin Hotel Timeout Taunts")
+            embed_dm.set_footer(text=f"ÌΌ {char_name} - Hazbin Hotel Timeout Taunts")
             await message.author.send(embed=embed_dm)
         except discord.Forbidden:
             print(f"Couldn't DM {message.author.name} - DS closed")
@@ -201,12 +201,12 @@ async def on_message(message):
             if mod_channel:
                 mod_taunt = random.choice(char["mod_messages"])
                 embed_mod = discord.Embed(
-                    title=f"\u1F507 {message.author.name} is in timeout and tried to speak!",
-                    description=f"**They said:** {message.content}\n\n**{char_name} says:** *\"{mod_taunt}\"*",
+                    title=f❣� {message.author.name} is in timeout and tried to speak!",
+                    description=f"**They said:** {message.content}\n\n**{char_name} says:** *\"{}{} {mod_taunt} {\'}\*",
                     color=char["color"]
                 )
                 embed_mod.set_author(name=message.author.display_name, icon_url=message.author.display_avatar.url)
-                embed_mod.set_footer(text=f"\u1DBAC {char_name} — Timeout Taunt  User ID: {message.author.id}")
+                embed_mod.set_footer(text=f"Ü⌠ {char_name} — Timeout Taunt  {message.author.id}")
                 await mod_channel.send(embed=embed_mod)
 
 client.run(DISCORD_TOKEN)
